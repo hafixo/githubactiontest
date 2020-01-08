@@ -23,3 +23,9 @@ jobs:
         release_note: 'Release created from commit ${{ github.sha }}'
         asset_filepath: './README.md'
         tag_name: v0.1.GITHUB_SHORT_SHA
+    - uses: jikuma/githubaction@v0.3.3-alpha
+      with:
+        operation: 'upload an asset to a release'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        asset_filepath: './CHANGELOG.md'
+        tag_name: v0.1.GITHUB_SHORT_SHA
